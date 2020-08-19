@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AccountTableViewCell" rowHeight="149" id="KGk-i7-Jjw" customClass="AccountTableViewCell" customModule="Moneybox_Light" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="384" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="384" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="77I-PL-cEb">
+                        <rect key="frame" x="16" y="8" width="352" height="134"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plan value: £1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMA-i8-ye3">
+                                <rect key="frame" x="16" y="56.5" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moneybox: £50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZs-W5-Pxe">
+                                <rect key="frame" x="16" y="85.5" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFn-Hb-Jsy">
+                                <rect key="frame" x="16" y="25.5" width="320" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <color key="textColor" name="SecondaryDark"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IhD-8V-tdl" customClass="ArrowView" customModule="Moneybox_Light" customModuleProvider="target">
+                                <rect key="frame" x="304" y="48" width="40" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="ch7-Mj-QbR"/>
+                                    <constraint firstAttribute="width" secondItem="IhD-8V-tdl" secondAttribute="height" multiplier="1:1" id="q2I-5p-95K"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="SecondaryLight"/>
+                        <constraints>
+                            <constraint firstItem="IhD-8V-tdl" firstAttribute="centerY" secondItem="77I-PL-cEb" secondAttribute="centerY" constant="1" id="3Ay-pc-EZw"/>
+                            <constraint firstItem="xZs-W5-Pxe" firstAttribute="top" secondItem="UMA-i8-ye3" secondAttribute="bottom" constant="8" id="9Il-T2-6pu"/>
+                            <constraint firstItem="UMA-i8-ye3" firstAttribute="centerY" secondItem="77I-PL-cEb" secondAttribute="centerY" id="Btr-rg-GlF"/>
+                            <constraint firstAttribute="trailing" secondItem="IhD-8V-tdl" secondAttribute="trailing" constant="8" id="Iw6-0N-zv8"/>
+                            <constraint firstAttribute="trailing" secondItem="hFn-Hb-Jsy" secondAttribute="trailing" constant="16" id="Oh9-cv-Gl5"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xZs-W5-Pxe" secondAttribute="bottom" constant="16" id="Yzv-MX-pdm"/>
+                            <constraint firstItem="xZs-W5-Pxe" firstAttribute="trailing" secondItem="UMA-i8-ye3" secondAttribute="trailing" id="bEY-O0-bmO"/>
+                            <constraint firstItem="UMA-i8-ye3" firstAttribute="leading" secondItem="77I-PL-cEb" secondAttribute="leading" constant="16" id="eoG-Om-IKa"/>
+                            <constraint firstItem="UMA-i8-ye3" firstAttribute="top" secondItem="hFn-Hb-Jsy" secondAttribute="bottom" constant="8" id="gNL-qU-Zf5"/>
+                            <constraint firstItem="hFn-Hb-Jsy" firstAttribute="leading" secondItem="77I-PL-cEb" secondAttribute="leading" constant="16" id="iwb-ud-Tk2"/>
+                            <constraint firstItem="xZs-W5-Pxe" firstAttribute="leading" secondItem="77I-PL-cEb" secondAttribute="leading" constant="16" id="jdb-9i-MZB"/>
+                            <constraint firstItem="hFn-Hb-Jsy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="77I-PL-cEb" secondAttribute="top" constant="16" id="oZU-15-qhd"/>
+                            <constraint firstItem="IhD-8V-tdl" firstAttribute="leading" secondItem="UMA-i8-ye3" secondAttribute="trailing" id="rB6-U6-8Pj"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="77I-PL-cEb" secondAttribute="bottom" constant="8" id="UIH-3G-gnn"/>
+                    <constraint firstItem="77I-PL-cEb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="d8m-yE-YnC"/>
+                    <constraint firstItem="77I-PL-cEb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="kGp-s1-Kcb"/>
+                    <constraint firstAttribute="trailing" secondItem="77I-PL-cEb" secondAttribute="trailing" constant="16" id="rSD-3v-fej"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="backingView" destination="77I-PL-cEb" id="0eE-EU-ATR"/>
+                <outlet property="moneyboxLabel" destination="xZs-W5-Pxe" id="vqj-fF-ulW"/>
+                <outlet property="titleLabel" destination="hFn-Hb-Jsy" id="Jwt-w1-Fjl"/>
+                <outlet property="valueLabel" destination="UMA-i8-ye3" id="3II-IV-aHN"/>
+            </connections>
+            <point key="canvasLocation" x="178.2608695652174" y="186.16071428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="SecondaryDark">
+            <color red="0.80900001525878906" green="0.40799999237060547" blue="0.34999999403953552" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="SecondaryLight">
+            <color red="0.99400001764297485" green="0.86400002241134644" blue="0.79900002479553223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

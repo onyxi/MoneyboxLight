@@ -1,0 +1,30 @@
+/* 
+  Localisable.strings
+  Moneybox-Light
+
+  Created by Pete Holdsworth on 18/08/2020.
+  Copyright © 2020 Pete Holdsworth. All rights reserved.
+*/
+
+// Login screen
+"login_screen_email_placeholder" = "Email";
+"login_screen_password_placeholder" = "Password";
+"login_screen_button_title" = "Login";
+
+
+// User accounts screen
+"user_accounts_screen_greeting_prefix" = "Hello ";
+"user_accounts_screen_accounts_total_title" = "Your total plan value is";
+"user_accounts_screen_accounts_total_prefix" = "£";
+"user_accounts_screen_accounts_list_title" = "Your Accounts";
+"user_accounts_screen_account_cell_value_title" = "Plan value: £";
+"user_accounts_screen_account_cell_moneybox_title" = "Moneybox: £";
+
+
+// Individual account screen
+"individual_account_screen_back_button_title" = "Back";
+"individual_account_screen_plan_value_title" = "Current Plan Value";
+"individual_account_screen_plan_value_prefix" = "£";
+"individual_account_screen_plan_moneybox_title" = "Moneybox";
+"individual_account_screen_plan_moneybox_prefix" = "£";
+"individual_account_screen_payment_button_title_prefix" = "Add £";

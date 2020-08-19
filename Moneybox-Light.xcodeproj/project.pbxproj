@@ -8,12 +8,45 @@
 
 /* Begin PBXBuildFile section */
 		286056B524EC76AA0031B607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286056B424EC76AA0031B607 /* AppDelegate.swift */; };
-		286056B724EC76AA0031B607 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286056B624EC76AA0031B607 /* SceneDelegate.swift */; };
-		286056B924EC76AA0031B607 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286056B824EC76AA0031B607 /* ViewController.swift */; };
-		286056BC24EC76AA0031B607 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 286056BA24EC76AA0031B607 /* Main.storyboard */; };
 		286056BE24EC76AB0031B607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 286056BD24EC76AB0031B607 /* Assets.xcassets */; };
 		286056C124EC76AB0031B607 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 286056BF24EC76AB0031B607 /* LaunchScreen.storyboard */; };
 		286056CC24EC76AB0031B607 /* Moneybox_LightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286056CB24EC76AB0031B607 /* Moneybox_LightTests.swift */; };
+		286056DC24EC7AE50031B607 /* UserAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286056DA24EC7AE50031B607 /* UserAccountsViewController.swift */; };
+		286056DD24EC7AE50031B607 /* UserAccountsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286056DB24EC7AE50031B607 /* UserAccountsViewController.xib */; };
+		286056E024EC7AF90031B607 /* IndividualAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286056DE24EC7AF90031B607 /* IndividualAccountViewController.swift */; };
+		286056E124EC7AF90031B607 /* IndividualAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286056DF24EC7AF90031B607 /* IndividualAccountViewController.xib */; };
+		286056E424EC7B0B0031B607 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286056E224EC7B0B0031B607 /* LoginViewController.swift */; };
+		286056E524EC7B0B0031B607 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286056E324EC7B0B0031B607 /* LoginViewController.xib */; };
+		286056E824EC7E9D0031B607 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286056E724EC7E9D0031B607 /* BaseViewController.swift */; };
+		286056EC24EC7F0B0031B607 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286056EB24EC7F0B0031B607 /* LoginPresenter.swift */; };
+		286056EE24EC7F1F0031B607 /* UserAccountsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286056ED24EC7F1F0031B607 /* UserAccountsPresenter.swift */; };
+		286056F024EC7F310031B607 /* IndividualAccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286056EF24EC7F310031B607 /* IndividualAccountPresenter.swift */; };
+		286056F224EC7F600031B607 /* LoginContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286056F124EC7F600031B607 /* LoginContract.swift */; };
+		286056F424EC7F920031B607 /* UserAccountsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286056F324EC7F920031B607 /* UserAccountsContract.swift */; };
+		286056F624EC7FC50031B607 /* IndividualAccountContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286056F524EC7FC50031B607 /* IndividualAccountContract.swift */; };
+		286056F824EC80AD0031B607 /* DataAccessObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286056F724EC80AD0031B607 /* DataAccessObject.swift */; };
+		286056FA24EC81900031B607 /* Localisable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 286056F924EC81900031B607 /* Localisable.strings */; };
+		286056FC24EC81E70031B607 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286056FB24EC81E70031B607 /* CustomNavigationController.swift */; };
+		2860570024EC88380031B607 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286056FE24EC88380031B607 /* AccountTableViewCell.swift */; };
+		2860570124EC88380031B607 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286056FF24EC88380031B607 /* AccountTableViewCell.xib */; };
+		2860570424EC88780031B607 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2860570324EC88780031B607 /* LoginButton.swift */; };
+		2860570624EC88960031B607 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2860570524EC88960031B607 /* LoginTextField.swift */; };
+		2860570924EC88F70031B607 /* ArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2860570824EC88F70031B607 /* ArrowView.swift */; };
+		2860570C24EC89C70031B607 /* PaymentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2860570B24EC89C70031B607 /* PaymentButton.swift */; };
+		28A37E9424ED53220053539A /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A37E9324ED53220053539A /* UIColor+Additions.swift */; };
+		28A37ED824ED94570053539A /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A37ED724ED94570053539A /* Account.swift */; };
+		28A37EDA24EDA36A0053539A /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A37ED924EDA36A0053539A /* AlertController.swift */; };
+		28A37EDC24EDA93F0053539A /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A37EDB24EDA93F0053539A /* UIView+Additions.swift */; };
+		28A37EDE24EDB1DB0053539A /* Localisable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A37EDD24EDB1DB0053539A /* Localisable.swift */; };
+		28A37EE024EDB90E0053539A /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A37EDF24EDB90E0053539A /* Environment.swift */; };
+		28A37EE224EDBA030053539A /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A37EE124EDBA030053539A /* LoginResponse.swift */; };
+		28A37EE424EDCD2B0053539A /* MoneyboxURLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A37EE324EDCD2B0053539A /* MoneyboxURLBuilder.swift */; };
+		28A37EE624EDE6FB0053539A /* AccountsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A37EE524EDE6FB0053539A /* AccountsResponse.swift */; };
+		28A37EE824EDE7370053539A /* PaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A37EE724EDE7370053539A /* PaymentResponse.swift */; };
+		28A37EEA24EDE7540053539A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A37EE924EDE7540053539A /* User.swift */; };
+		28A37EEC24EDE7680053539A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A37EEB24EDE7680053539A /* Session.swift */; };
+		28A37EEE24EDE7850053539A /* ProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A37EED24EDE7850053539A /* ProductResponse.swift */; };
+		28A37EF024EDE7970053539A /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A37EEF24EDE7970053539A /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,15 +62,48 @@
 /* Begin PBXFileReference section */
 		286056B124EC76AA0031B607 /* Moneybox-Light.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moneybox-Light.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		286056B424EC76AA0031B607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		286056B624EC76AA0031B607 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		286056B824EC76AA0031B607 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		286056BB24EC76AA0031B607 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		286056BD24EC76AB0031B607 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		286056C024EC76AB0031B607 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		286056C224EC76AB0031B607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		286056C724EC76AB0031B607 /* Moneybox-LightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Moneybox-LightTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		286056CB24EC76AB0031B607 /* Moneybox_LightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moneybox_LightTests.swift; sourceTree = "<group>"; };
 		286056CD24EC76AB0031B607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		286056DA24EC7AE50031B607 /* UserAccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountsViewController.swift; sourceTree = "<group>"; };
+		286056DB24EC7AE50031B607 /* UserAccountsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserAccountsViewController.xib; sourceTree = "<group>"; };
+		286056DE24EC7AF90031B607 /* IndividualAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAccountViewController.swift; sourceTree = "<group>"; };
+		286056DF24EC7AF90031B607 /* IndividualAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndividualAccountViewController.xib; sourceTree = "<group>"; };
+		286056E224EC7B0B0031B607 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		286056E324EC7B0B0031B607 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		286056E724EC7E9D0031B607 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		286056EB24EC7F0B0031B607 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		286056ED24EC7F1F0031B607 /* UserAccountsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountsPresenter.swift; sourceTree = "<group>"; };
+		286056EF24EC7F310031B607 /* IndividualAccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAccountPresenter.swift; sourceTree = "<group>"; };
+		286056F124EC7F600031B607 /* LoginContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContract.swift; sourceTree = "<group>"; };
+		286056F324EC7F920031B607 /* UserAccountsContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountsContract.swift; sourceTree = "<group>"; };
+		286056F524EC7FC50031B607 /* IndividualAccountContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAccountContract.swift; sourceTree = "<group>"; };
+		286056F724EC80AD0031B607 /* DataAccessObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAccessObject.swift; sourceTree = "<group>"; };
+		286056F924EC81900031B607 /* Localisable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localisable.strings; sourceTree = "<group>"; };
+		286056FB24EC81E70031B607 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		286056FE24EC88380031B607 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
+		286056FF24EC88380031B607 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
+		2860570324EC88780031B607 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		2860570524EC88960031B607 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
+		2860570824EC88F70031B607 /* ArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowView.swift; sourceTree = "<group>"; };
+		2860570B24EC89C70031B607 /* PaymentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentButton.swift; sourceTree = "<group>"; };
+		28A37E9324ED53220053539A /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
+		28A37ED724ED94570053539A /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		28A37ED924EDA36A0053539A /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		28A37EDB24EDA93F0053539A /* UIView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
+		28A37EDD24EDB1DB0053539A /* Localisable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localisable.swift; sourceTree = "<group>"; };
+		28A37EDF24EDB90E0053539A /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		28A37EE124EDBA030053539A /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		28A37EE324EDCD2B0053539A /* MoneyboxURLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyboxURLBuilder.swift; sourceTree = "<group>"; };
+		28A37EE524EDE6FB0053539A /* AccountsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsResponse.swift; sourceTree = "<group>"; };
+		28A37EE724EDE7370053539A /* PaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentResponse.swift; sourceTree = "<group>"; };
+		28A37EE924EDE7540053539A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		28A37EEB24EDE7680053539A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		28A37EED24EDE7850053539A /* ProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductResponse.swift; sourceTree = "<group>"; };
+		28A37EEF24EDE7970053539A /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +145,15 @@
 		286056B324EC76AA0031B607 /* Moneybox-Light */ = {
 			isa = PBXGroup;
 			children = (
-				286056B424EC76AA0031B607 /* AppDelegate.swift */,
-				286056B624EC76AA0031B607 /* SceneDelegate.swift */,
-				286056B824EC76AA0031B607 /* ViewController.swift */,
-				286056BA24EC76AA0031B607 /* Main.storyboard */,
-				286056BD24EC76AB0031B607 /* Assets.xcassets */,
-				286056BF24EC76AB0031B607 /* LaunchScreen.storyboard */,
 				286056C224EC76AB0031B607 /* Info.plist */,
+				286056BD24EC76AB0031B607 /* Assets.xcassets */,
+				286056F924EC81900031B607 /* Localisable.strings */,
+				286056BF24EC76AB0031B607 /* LaunchScreen.storyboard */,
+				286056B424EC76AA0031B607 /* AppDelegate.swift */,
+				28A37E9224ED53060053539A /* Extensions */,
+				286056E924EC7ED30031B607 /* Utils */,
+				286056EA24EC7EE40031B607 /* Models */,
+				286056D624EC7A820031B607 /* UI */,
 			);
 			path = "Moneybox-Light";
 			sourceTree = "<group>";
@@ -97,6 +165,133 @@
 				286056CD24EC76AB0031B607 /* Info.plist */,
 			);
 			path = "Moneybox-LightTests";
+			sourceTree = "<group>";
+		};
+		286056D624EC7A820031B607 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				286056E624EC7E780031B607 /* Shared */,
+				286056D724EC7A9D0031B607 /* Login Screen */,
+				286056D824EC7AA50031B607 /* User Accounts Screen */,
+				286056D924EC7AAE0031B607 /* Individual Account Screen */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		286056D724EC7A9D0031B607 /* Login Screen */ = {
+			isa = PBXGroup;
+			children = (
+				286056F124EC7F600031B607 /* LoginContract.swift */,
+				286056EB24EC7F0B0031B607 /* LoginPresenter.swift */,
+				286056E224EC7B0B0031B607 /* LoginViewController.swift */,
+				286056E324EC7B0B0031B607 /* LoginViewController.xib */,
+				2860570224EC884D0031B607 /* Components */,
+			);
+			path = "Login Screen";
+			sourceTree = "<group>";
+		};
+		286056D824EC7AA50031B607 /* User Accounts Screen */ = {
+			isa = PBXGroup;
+			children = (
+				286056F324EC7F920031B607 /* UserAccountsContract.swift */,
+				286056ED24EC7F1F0031B607 /* UserAccountsPresenter.swift */,
+				286056DA24EC7AE50031B607 /* UserAccountsViewController.swift */,
+				286056DB24EC7AE50031B607 /* UserAccountsViewController.xib */,
+				286056FD24EC880B0031B607 /* Components */,
+			);
+			path = "User Accounts Screen";
+			sourceTree = "<group>";
+		};
+		286056D924EC7AAE0031B607 /* Individual Account Screen */ = {
+			isa = PBXGroup;
+			children = (
+				286056F524EC7FC50031B607 /* IndividualAccountContract.swift */,
+				286056EF24EC7F310031B607 /* IndividualAccountPresenter.swift */,
+				286056DE24EC7AF90031B607 /* IndividualAccountViewController.swift */,
+				286056DF24EC7AF90031B607 /* IndividualAccountViewController.xib */,
+				2860570A24EC890B0031B607 /* Components */,
+			);
+			path = "Individual Account Screen";
+			sourceTree = "<group>";
+		};
+		286056E624EC7E780031B607 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				286056E724EC7E9D0031B607 /* BaseViewController.swift */,
+				286056FB24EC81E70031B607 /* CustomNavigationController.swift */,
+				2860570824EC88F70031B607 /* ArrowView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		286056E924EC7ED30031B607 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				28A37EDF24EDB90E0053539A /* Environment.swift */,
+				286056F724EC80AD0031B607 /* DataAccessObject.swift */,
+				28A37EE324EDCD2B0053539A /* MoneyboxURLBuilder.swift */,
+				28A37ED924EDA36A0053539A /* AlertController.swift */,
+				28A37EDD24EDB1DB0053539A /* Localisable.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		286056EA24EC7EE40031B607 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				28A37ED724ED94570053539A /* Account.swift */,
+				28A37EE124EDBA030053539A /* LoginResponse.swift */,
+				28A37EE924EDE7540053539A /* User.swift */,
+				28A37EEB24EDE7680053539A /* Session.swift */,
+				28A37EE524EDE6FB0053539A /* AccountsResponse.swift */,
+				28A37EED24EDE7850053539A /* ProductResponse.swift */,
+				28A37EE724EDE7370053539A /* PaymentResponse.swift */,
+				28A37EEF24EDE7970053539A /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		286056FD24EC880B0031B607 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2860570724EC88D60031B607 /* Account Cell */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2860570224EC884D0031B607 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2860570524EC88960031B607 /* LoginTextField.swift */,
+				2860570324EC88780031B607 /* LoginButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2860570724EC88D60031B607 /* Account Cell */ = {
+			isa = PBXGroup;
+			children = (
+				286056FE24EC88380031B607 /* AccountTableViewCell.swift */,
+				286056FF24EC88380031B607 /* AccountTableViewCell.xib */,
+			);
+			path = "Account Cell";
+			sourceTree = "<group>";
+		};
+		2860570A24EC890B0031B607 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2860570B24EC89C70031B607 /* PaymentButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		28A37E9224ED53060053539A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				28A37EDB24EDA93F0053539A /* UIView+Additions.swift */,
+				28A37E9324ED53220053539A /* UIColor+Additions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,9 +375,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				286056E524EC7B0B0031B607 /* LoginViewController.xib in Resources */,
 				286056C124EC76AB0031B607 /* LaunchScreen.storyboard in Resources */,
+				286056E124EC7AF90031B607 /* IndividualAccountViewController.xib in Resources */,
 				286056BE24EC76AB0031B607 /* Assets.xcassets in Resources */,
-				286056BC24EC76AA0031B607 /* Main.storyboard in Resources */,
+				286056FA24EC81900031B607 /* Localisable.strings in Resources */,
+				2860570124EC88380031B607 /* AccountTableViewCell.xib in Resources */,
+				286056DD24EC7AE50031B607 /* UserAccountsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,9 +399,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				286056B924EC76AA0031B607 /* ViewController.swift in Sources */,
+				2860570C24EC89C70031B607 /* PaymentButton.swift in Sources */,
+				28A37EE024EDB90E0053539A /* Environment.swift in Sources */,
+				28A37EDE24EDB1DB0053539A /* Localisable.swift in Sources */,
+				286056EC24EC7F0B0031B607 /* LoginPresenter.swift in Sources */,
+				2860570624EC88960031B607 /* LoginTextField.swift in Sources */,
+				286056F624EC7FC50031B607 /* IndividualAccountContract.swift in Sources */,
+				28A37EDC24EDA93F0053539A /* UIView+Additions.swift in Sources */,
+				28A37EDA24EDA36A0053539A /* AlertController.swift in Sources */,
+				28A37EEA24EDE7540053539A /* User.swift in Sources */,
+				28A37EF024EDE7970053539A /* Product.swift in Sources */,
+				286056E824EC7E9D0031B607 /* BaseViewController.swift in Sources */,
+				28A37EE824EDE7370053539A /* PaymentResponse.swift in Sources */,
+				28A37ED824ED94570053539A /* Account.swift in Sources */,
+				28A37EE424EDCD2B0053539A /* MoneyboxURLBuilder.swift in Sources */,
+				28A37E9424ED53220053539A /* UIColor+Additions.swift in Sources */,
+				286056F024EC7F310031B607 /* IndividualAccountPresenter.swift in Sources */,
+				286056EE24EC7F1F0031B607 /* UserAccountsPresenter.swift in Sources */,
+				286056F224EC7F600031B607 /* LoginContract.swift in Sources */,
+				28A37EE224EDBA030053539A /* LoginResponse.swift in Sources */,
+				286056E424EC7B0B0031B607 /* LoginViewController.swift in Sources */,
+				2860570924EC88F70031B607 /* ArrowView.swift in Sources */,
+				28A37EEC24EDE7680053539A /* Session.swift in Sources */,
+				286056F424EC7F920031B607 /* UserAccountsContract.swift in Sources */,
+				286056F824EC80AD0031B607 /* DataAccessObject.swift in Sources */,
+				28A37EEE24EDE7850053539A /* ProductResponse.swift in Sources */,
+				286056DC24EC7AE50031B607 /* UserAccountsViewController.swift in Sources */,
+				2860570424EC88780031B607 /* LoginButton.swift in Sources */,
+				286056E024EC7AF90031B607 /* IndividualAccountViewController.swift in Sources */,
+				2860570024EC88380031B607 /* AccountTableViewCell.swift in Sources */,
+				28A37EE624EDE6FB0053539A /* AccountsResponse.swift in Sources */,
 				286056B524EC76AA0031B607 /* AppDelegate.swift in Sources */,
-				286056B724EC76AA0031B607 /* SceneDelegate.swift in Sources */,
+				286056FC24EC81E70031B607 /* CustomNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,14 +453,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		286056BA24EC76AA0031B607 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				286056BB24EC76AA0031B607 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		286056BF24EC76AB0031B607 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -365,6 +585,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DN5JPNCL7L;
 				INFOPLIST_FILE = "Moneybox-Light/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,7 +593,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Pete-Holdsworth.Moneybox-Light";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -383,6 +604,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DN5JPNCL7L;
 				INFOPLIST_FILE = "Moneybox-Light/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -390,7 +612,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Pete-Holdsworth.Moneybox-Light";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

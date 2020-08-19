@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Moneybox_Light" customModuleProvider="target">
+            <connections>
+                <outlet property="emailTextField" destination="NwF-UP-VIk" id="UMi-qW-egM"/>
+                <outlet property="loginButton" destination="8Be-ci-0hn" id="LVW-47-j2j"/>
+                <outlet property="passwordTextField" destination="Vd0-PC-8zf" id="jhB-CL-x8d"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yc2-ZQ-nNK" userLabel="Text fields container">
+                    <rect key="frame" x="41.5" y="321" width="331" height="120"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NwF-UP-VIk" customClass="LoginTextField" customModule="Moneybox_Light" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="331" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="IbL-ql-xQh"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vd0-PC-8zf" customClass="LoginTextField" customModule="Moneybox_Light" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="75" width="331" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="MFA-lU-1Pu"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="NwF-UP-VIk" firstAttribute="leading" secondItem="Yc2-ZQ-nNK" secondAttribute="leading" id="Ltp-KZ-tSt"/>
+                        <constraint firstAttribute="trailing" secondItem="NwF-UP-VIk" secondAttribute="trailing" id="Pbd-rP-FJy"/>
+                        <constraint firstAttribute="trailing" secondItem="Vd0-PC-8zf" secondAttribute="trailing" id="Tiy-YL-bRQ"/>
+                        <constraint firstAttribute="bottom" secondItem="Vd0-PC-8zf" secondAttribute="bottom" id="cW7-9H-vYI"/>
+                        <constraint firstItem="Vd0-PC-8zf" firstAttribute="top" secondItem="NwF-UP-VIk" secondAttribute="bottom" constant="30" id="hoA-n9-qbP"/>
+                        <constraint firstItem="Vd0-PC-8zf" firstAttribute="leading" secondItem="Yc2-ZQ-nNK" secondAttribute="leading" id="weW-iR-4YF"/>
+                        <constraint firstItem="NwF-UP-VIk" firstAttribute="top" secondItem="Yc2-ZQ-nNK" secondAttribute="top" id="zeH-KT-OFa"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moneybox" translatesAutoresizingMaskIntoConstraints="NO" id="gui-Jw-ehy">
+                    <rect key="frame" x="73" y="142.5" width="268" height="73"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="73" id="Hi5-cr-1D8"/>
+                        <constraint firstAttribute="width" constant="268" id="XKM-W0-WEl"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Be-ci-0hn" customClass="LoginButton" customModule="Moneybox_Light" customModuleProvider="target">
+                    <rect key="frame" x="107" y="597" width="200" height="60"/>
+                    <color key="backgroundColor" name="PrimaryDark"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="G95-8d-c76"/>
+                        <constraint firstAttribute="width" constant="200" id="WuX-t4-dYe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <state key="normal" title="Login">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="loginTapped:" destination="-1" eventType="touchUpInside" id="FnY-vT-j1R"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" name="PrimaryLight"/>
+            <constraints>
+                <constraint firstItem="8Be-ci-0hn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7K6-wi-g1A"/>
+                <constraint firstItem="Yc2-ZQ-nNK" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="Ijy-0b-muu"/>
+                <constraint firstItem="gui-Jw-ehy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QNN-zI-ygU"/>
+                <constraint firstItem="gui-Jw-ehy" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.4" id="dUk-bx-C0E"/>
+                <constraint firstItem="8Be-ci-0hn" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.4" id="izA-3w-NJb"/>
+                <constraint firstItem="Yc2-ZQ-nNK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oaT-9g-LY7"/>
+                <constraint firstItem="Yc2-ZQ-nNK" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.85" id="w6z-dm-baR"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="153"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="moneybox" width="538" height="146"/>
+        <namedColor name="PrimaryDark">
+            <color red="0.15800000727176666" green="0.37400001287460327" blue="0.46299999952316284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="PrimaryLight">
+            <color red="0.91399997472763062" green="0.97299998998641968" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>
