@@ -43,7 +43,7 @@ class UserAccountsPresenter {
                 view.showAlert(self.dataServiceAlertConfiguration())
             }
         case .success(let accountsResponse):
-            view.setTotalTitle(localisableString(forKey: "individual_account_screen_plan_value_title"))
+            view.setTotalTitle(localisableString(forKey: "user_accounts_screen_accounts_total_title"))
             let totalPlanValue = accountsResponse.totalPlanValue
             view.setTotal(localisableString(forKey: "user_accounts_screen_accounts_total_prefix") + String(format: "%.2f", totalPlanValue))
             let accounts = accountsResponse.productResponses.map { productResponse -> Account in
