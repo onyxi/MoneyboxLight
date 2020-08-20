@@ -1,6 +1,3 @@
-# MoneyboxLight
-Moneybox iOS Technical Challenge
-
 # Moneybox Light
 
 This project is a light-weight version of the Moneybox app - intended to demonstrate some of its core concepts. The app enables users to view the current state of all their investments, inspect individual accounts and to make deposits into each account's Moneybox - ready for investment by the Moneybox team. 
