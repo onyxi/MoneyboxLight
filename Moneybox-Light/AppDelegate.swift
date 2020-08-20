@@ -26,10 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let userAccountsViewController = UserAccountsViewController(presenter: userAccountsPresenter)
         rootNavController.addChild(userAccountsViewController)
         
-//        let loginPresenter = LoginPresenter(dao: DataAccessObjectImpl.shared)
-//        let loginViewController = LoginViewController(presenter: loginPresenter)
-//        rootNavController.addChild(loginViewController)
-        
         window.makeKeyAndVisible()
         window.rootViewController = rootNavController
         self.window = window

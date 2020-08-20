@@ -28,7 +28,9 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         emailTextField.placeholder = localisableString(forKey: "login_screen_email_placeholder")
+        emailTextField.delegate = self
         passwordTextField.placeholder = localisableString(forKey: "login_screen_password_placeholder")
+        passwordTextField.delegate = self
         presenter.viewReady(self)
     }
     
@@ -63,3 +65,13 @@ extension LoginViewController: LoginViewContract {
     }
     
 }
+
+// MARK: UITextFieldDelegate
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return false
+    }
+}
+
+    

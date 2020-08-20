@@ -47,6 +47,8 @@
 		28A37EEC24EDE7680053539A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A37EEB24EDE7680053539A /* Session.swift */; };
 		28A37EEE24EDE7850053539A /* ProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A37EED24EDE7850053539A /* ProductResponse.swift */; };
 		28A37EF024EDE7970053539A /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A37EEF24EDE7970053539A /* Product.swift */; };
+		C4BA3C3D8C00C2B9D9E1588E /* Pods_Moneybox_Light.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762257E2A33EFF8ADA69B83F /* Pods_Moneybox_Light.framework */; };
+		CFCE624800489D6B7F0A06CE /* Pods_Moneybox_LightTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF771F4DEE72B31C6E3989F /* Pods_Moneybox_LightTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,12 @@
 		28A37EEB24EDE7680053539A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		28A37EED24EDE7850053539A /* ProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductResponse.swift; sourceTree = "<group>"; };
 		28A37EEF24EDE7970053539A /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		665D5E5C93E6F3F87026DB4C /* Pods-Moneybox-LightTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moneybox-LightTests.debug.xcconfig"; path = "Target Support Files/Pods-Moneybox-LightTests/Pods-Moneybox-LightTests.debug.xcconfig"; sourceTree = "<group>"; };
+		762257E2A33EFF8ADA69B83F /* Pods_Moneybox_Light.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moneybox_Light.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9715EDF6CE1FCFE80C0DCFC6 /* Pods-Moneybox-Light.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moneybox-Light.debug.xcconfig"; path = "Target Support Files/Pods-Moneybox-Light/Pods-Moneybox-Light.debug.xcconfig"; sourceTree = "<group>"; };
+		A41FA69A5BE077D47F914A0D /* Pods-Moneybox-Light.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moneybox-Light.release.xcconfig"; path = "Target Support Files/Pods-Moneybox-Light/Pods-Moneybox-Light.release.xcconfig"; sourceTree = "<group>"; };
+		B649BDF225FD98DAA91FB19A /* Pods-Moneybox-LightTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moneybox-LightTests.release.xcconfig"; path = "Target Support Files/Pods-Moneybox-LightTests/Pods-Moneybox-LightTests.release.xcconfig"; sourceTree = "<group>"; };
+		DAF771F4DEE72B31C6E3989F /* Pods_Moneybox_LightTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moneybox_LightTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4BA3C3D8C00C2B9D9E1588E /* Pods_Moneybox_Light.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFCE624800489D6B7F0A06CE /* Pods_Moneybox_LightTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +140,8 @@
 				286056B324EC76AA0031B607 /* Moneybox-Light */,
 				286056CA24EC76AB0031B607 /* Moneybox-LightTests */,
 				286056B224EC76AA0031B607 /* Products */,
+				E370F4FC7A87F797D041F432 /* Pods */,
+				D6456F9118167C58A966D83B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -294,6 +306,27 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		D6456F9118167C58A966D83B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				762257E2A33EFF8ADA69B83F /* Pods_Moneybox_Light.framework */,
+				DAF771F4DEE72B31C6E3989F /* Pods_Moneybox_LightTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E370F4FC7A87F797D041F432 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9715EDF6CE1FCFE80C0DCFC6 /* Pods-Moneybox-Light.debug.xcconfig */,
+				A41FA69A5BE077D47F914A0D /* Pods-Moneybox-Light.release.xcconfig */,
+				665D5E5C93E6F3F87026DB4C /* Pods-Moneybox-LightTests.debug.xcconfig */,
+				B649BDF225FD98DAA91FB19A /* Pods-Moneybox-LightTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -301,9 +334,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 286056D024EC76AB0031B607 /* Build configuration list for PBXNativeTarget "Moneybox-Light" */;
 			buildPhases = (
+				171BC9B678D91F9B71F8A31D /* [CP] Check Pods Manifest.lock */,
 				286056AD24EC76AA0031B607 /* Sources */,
 				286056AE24EC76AA0031B607 /* Frameworks */,
 				286056AF24EC76AA0031B607 /* Resources */,
+				A707D3142929DA3074FF3343 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -318,6 +353,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 286056D324EC76AB0031B607 /* Build configuration list for PBXNativeTarget "Moneybox-LightTests" */;
 			buildPhases = (
+				25973741E9ABE54091963D0B /* [CP] Check Pods Manifest.lock */,
 				286056C324EC76AB0031B607 /* Sources */,
 				286056C424EC76AB0031B607 /* Frameworks */,
 				286056C524EC76AB0031B607 /* Resources */,
@@ -393,6 +429,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		171BC9B678D91F9B71F8A31D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Moneybox-Light-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25973741E9ABE54091963D0B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Moneybox-LightTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A707D3142929DA3074FF3343 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Moneybox-Light/Pods-Moneybox-Light-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Moneybox-Light/Pods-Moneybox-Light-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Moneybox-Light/Pods-Moneybox-Light-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		286056AD24EC76AA0031B607 /* Sources */ = {
@@ -580,6 +680,7 @@
 		};
 		286056D124EC76AB0031B607 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9715EDF6CE1FCFE80C0DCFC6 /* Pods-Moneybox-Light.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -599,6 +700,7 @@
 		};
 		286056D224EC76AB0031B607 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A41FA69A5BE077D47F914A0D /* Pods-Moneybox-Light.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -618,6 +720,7 @@
 		};
 		286056D424EC76AB0031B607 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 665D5E5C93E6F3F87026DB4C /* Pods-Moneybox-LightTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -640,6 +743,7 @@
 		};
 		286056D524EC76AB0031B607 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B649BDF225FD98DAA91FB19A /* Pods-Moneybox-LightTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

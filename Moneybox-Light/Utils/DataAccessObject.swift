@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import KeychainSwift
 
 enum DataServiceError: Error { case applicationError, serverError, unauthorized, networkError, jsonError }
 
@@ -37,20 +38,23 @@ class DataAccessObjectImpl: DataAccessObject {
     // MARK: Local storage...
     
     let defaults = UserDefaults.standard
+    let keychain = KeychainSwift()
     
     let bearerTokenKey = "BEARER_TOKEN"
     let userNameKey = "USER_NAME"
     
     func saveSession(session: Session) {
-        defaults.set(session.bearerToken, forKey: bearerTokenKey)
+        let secureStorageKey = UUID().uuidString
+        defaults.set(secureStorageKey, forKey: bearerTokenKey)
+        keychain.set(session.bearerToken, forKey: secureStorageKey, withAccess: .accessibleWhenUnlockedThisDeviceOnly)
     }
     
     func getSession() -> Session? {
-        if let bearerToken = defaults.string(forKey: bearerTokenKey) {
-            return Session(bearerToken: bearerToken)
-        } else {
-            return nil
-        }
+        guard
+            let secureStorageKey: String = defaults.string(forKey: bearerTokenKey),
+            let bearerToken = keychain.get(secureStorageKey)
+        else { return nil }
+        return Session(bearerToken: bearerToken)
     }
     
     func saveUser(user: User) {
