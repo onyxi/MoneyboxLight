@@ -9,19 +9,6 @@
 import UIKit
 
 class ArrowView: UIView {
-
-    enum Direction { case right, left }
-    
-    var direction = Direction.right {
-        didSet {
-            switch direction {
-            case .left:
-                transform = CGAffineTransform(scaleX: -1, y: 1)
-            case .right:
-                transform = CGAffineTransform(scaleX: 1, y: 1)
-            }
-        }
-    }
     
     var path: UIBezierPath?
 

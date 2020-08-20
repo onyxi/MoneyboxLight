@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         let rootNavController = CustomNavigationController()
         
-        let userAccountsPresenter = UserAccountsPresenter(dao: DataAccessObjectImpl.shared)
+        let userAccountsPresenter = UserAccountsPresenter(dao: DataAccessObjectImpl())
         let userAccountsViewController = UserAccountsViewController(presenter: userAccountsPresenter)
         rootNavController.addChild(userAccountsViewController)
         

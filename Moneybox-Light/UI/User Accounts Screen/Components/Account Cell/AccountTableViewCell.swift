@@ -14,10 +14,10 @@ protocol AccountTableViewCellDelegate: class {
 
 class AccountTableViewCell: UITableViewCell {
     
-    @IBOutlet private weak var backingView: UIView!
-    @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var valueLabel: UILabel!
-    @IBOutlet private weak var moneyboxLabel: UILabel!
+    @IBOutlet weak var backingView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var moneyboxLabel: UILabel!
     
     weak var delegate: AccountTableViewCellDelegate?
     

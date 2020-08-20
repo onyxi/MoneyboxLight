@@ -12,6 +12,7 @@ class BaseViewController: UIViewController {
 
     private let loadingOverlayView = UIView()
     private let activityIndicator = UIActivityIndicatorView()
+    var isShowingLoading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +30,11 @@ class BaseViewController: UIViewController {
             loadingOverlayView.removeFromSuperview()
             activityIndicator.stopAnimating()
         }
+        isShowingLoading = shouldShowLoading
     }
     
     func showLogin() {
-        let loginPresenter = LoginPresenter(dao: DataAccessObjectImpl.shared)
+        let loginPresenter = LoginPresenter(dao: DataAccessObjectImpl())
         let loginViewController = LoginViewController(presenter: loginPresenter)
         navigationController?.present(loginViewController, animated: true, completion: nil)
     }

@@ -10,11 +10,11 @@ import UIKit
 
 class LoginViewController: BaseViewController {
 
-    @IBOutlet private weak var emailTextField: LoginTextField!
-    @IBOutlet private weak var passwordTextField: LoginTextField!
-    @IBOutlet private weak var loginButton: LoginButton!
+    @IBOutlet weak var emailTextField: LoginTextField!
+    @IBOutlet weak var passwordTextField: LoginTextField!
+    @IBOutlet weak var loginButton: LoginButton!
 
-    let presenter: LoginPresenterContract
+    private let presenter: LoginPresenterContract
     
     init(presenter: LoginPresenterContract) {
         self.presenter = presenter

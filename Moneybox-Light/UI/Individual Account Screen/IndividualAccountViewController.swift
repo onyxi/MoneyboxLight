@@ -10,14 +10,14 @@ import UIKit
 
 class IndividualAccountViewController: BaseViewController {
 
-    @IBOutlet private weak var backButton: UIButton!
-    @IBOutlet private weak var screenTitleLabel: UILabel!
-    @IBOutlet private weak var planTitleLabel: UILabel!
-    @IBOutlet private weak var planValueLabel: UILabel!
-    @IBOutlet private weak var moneyboxBackingView: UIView!
-    @IBOutlet private weak var moneyBoxTitleLabel: UILabel!
-    @IBOutlet private weak var moneyboxValueLabel: UILabel!
-    @IBOutlet private weak var paymentButton: PaymentButton!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var screenTitleLabel: UILabel!
+    @IBOutlet weak var planTitleLabel: UILabel!
+    @IBOutlet weak var planValueLabel: UILabel!
+    @IBOutlet weak var moneyboxBackingView: UIView!
+    @IBOutlet weak var moneyBoxTitleLabel: UILabel!
+    @IBOutlet weak var moneyboxValueLabel: UILabel!
+    @IBOutlet weak var paymentButton: PaymentButton!
 
     let presenter: IndividualAccountPresenterContract
     

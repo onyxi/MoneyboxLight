@@ -8,9 +8,14 @@
 
 import Foundation
 
-struct Account {
+struct Account: Equatable {
     let productId: Int
     let name: String
     let value: Double
     let moneybox: Double
+    
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.productId == rhs.productId
+    }
+    
 }

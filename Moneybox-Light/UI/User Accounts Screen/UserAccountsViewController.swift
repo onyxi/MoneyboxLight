@@ -10,10 +10,10 @@ import UIKit
 
 class UserAccountsViewController: BaseViewController {
 
-    @IBOutlet private weak var greetingLabel: UILabel!
-    @IBOutlet private weak var totalTitleLabel: UILabel!
-    @IBOutlet private weak var totalLabel: UILabel!
-    @IBOutlet private weak var accountsListTitleLabel: UILabel!
+    @IBOutlet weak var greetingLabel: UILabel!
+    @IBOutlet weak var totalTitleLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var accountsListTitleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     var accounts = [Account]() {
@@ -22,7 +22,7 @@ class UserAccountsViewController: BaseViewController {
         }
     }
     
-    let presenter: UserAccountsPresenterContract
+    fileprivate let presenter: UserAccountsPresenterContract
     
     init(presenter: UserAccountsPresenterContract) {
         self.presenter = presenter
@@ -129,7 +129,7 @@ extension UserAccountsViewController: UserAccountsViewContract {
     }
     
     func goToAccountDetailsScreen(_ account: Account) {
-        let individualAccountPresenter = IndividualAccountPresenter(account: account, dao: DataAccessObjectImpl.shared)
+        let individualAccountPresenter = IndividualAccountPresenter(account: account, dao: DataAccessObjectImpl())
         let individualAccountViewController = IndividualAccountViewController(presenter: individualAccountPresenter)
         navigationController?.pushViewController(individualAccountViewController, animated: true)
     }

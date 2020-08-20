@@ -33,7 +33,6 @@ class AlertController: UIAlertController {
             return .destructive
         }
     }
-    
 }
 
 // MARK: AlertConfiguration

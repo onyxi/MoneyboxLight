@@ -21,179 +21,92 @@ protocol DataAccessObject {
     func getSession() -> Session?
     func saveUser(user: User)
     func getUser() -> User?
-    func getAccounts(completion: @escaping (AccountsResult) -> ())
-    func makeOneOffPayment(account: Account, amount: Int, completion: @escaping (PaymentResult) -> ())
+    func getAccounts(bearerToken: String?, completion: @escaping (AccountsResult) -> ())
+    func makeOneOffPayment(bearerToken: String?, account: Account, amount: Int, completion: @escaping (PaymentResult) -> ())
+}
+
+extension DataAccessObject {
+    func getAccounts(completion: @escaping (AccountsResult) -> ()) {
+        getAccounts(bearerToken: nil, completion: completion)
+    }
+    
+    func makeOneOffPayment(account: Account, amount: Int, completion: @escaping (PaymentResult) -> ()) {
+        makeOneOffPayment(bearerToken: nil, account: account, amount: amount, completion: completion)
+    }
 }
 
 // MARK: DataAccessObjectImpl
 
 class DataAccessObjectImpl: DataAccessObject {
     
-    static let shared = DataAccessObjectImpl()
-    private init() {}
+    let keyValueStore: KeyValueStoreProtocol
+    let secureKeyValueStore: SecureKeyValueStoreProtocol
+    let operationQueue: OperationQueue
     
-    let operationQueue = OperationQueue()
+    init(keyValueStore: KeyValueStoreProtocol = UserDefaults.standard, secureKeyValueStore: SecureKeyValueStoreProtocol = KeychainSwift(), operationQueue: OperationQueue = OperationQueue()) {
+        self.keyValueStore = keyValueStore
+        self.secureKeyValueStore = secureKeyValueStore
+        self.operationQueue = operationQueue
+    }
+}
     
+// MARK: Local storage...
+
+extension DataAccessObjectImpl {
     
-    // MARK: Local storage...
-    
-    let defaults = UserDefaults.standard
-    let keychain = KeychainSwift()
-    
-    let bearerTokenKey = "BEARER_TOKEN"
-    let userNameKey = "USER_NAME"
-    
+    /// Stores the given session data in encrypted storage, using UserDefaults to store the reference key.
     func saveSession(session: Session) {
         let secureStorageKey = UUID().uuidString
-        defaults.set(secureStorageKey, forKey: bearerTokenKey)
-        keychain.set(session.bearerToken, forKey: secureStorageKey, withAccess: .accessibleWhenUnlockedThisDeviceOnly)
+        keyValueStore.set(secureStorageKey, forKey: StorageKey.bearerToken)
+        _ = secureKeyValueStore.set(session.bearerToken, forKey: secureStorageKey, withAccess: .accessibleWhenUnlockedThisDeviceOnly)
     }
     
+    /// Fetches the session data from encrypted storage by first getting the reference key for it from UserDefaults.
     func getSession() -> Session? {
         guard
-            let secureStorageKey: String = defaults.string(forKey: bearerTokenKey),
-            let bearerToken = keychain.get(secureStorageKey)
+            let secureStorageKey: String = keyValueStore.string(forKey: StorageKey.bearerToken),
+            let bearerToken = secureKeyValueStore.get(secureStorageKey)
         else { return nil }
         return Session(bearerToken: bearerToken)
     }
     
     func saveUser(user: User) {
-        defaults.set(user.name, forKey: userNameKey)
+        keyValueStore.set(user.name, forKey: StorageKey.userName)
     }
     
     func getUser() -> User? {
-        if let name = defaults.string(forKey: userNameKey) {
+        if let name = keyValueStore.string(forKey: StorageKey.userName) {
             return User(name: name)
         } else {
             return nil
         }
     }
-    
-    // MARK: Network data...
+}
+
+// MARK: Network data...
+
+extension DataAccessObjectImpl {
     
     func login(username: String, password: String, completion: @escaping (LoginResult) -> ()) {
-        operationQueue.addOperation { [weak self] in
-            guard let url = URL(string: Environment.baseURL + "/users/login") else { return }
-            var request = MoneyboxURLRequestBuilder.urlRequest(url: url)
-            request.httpMethod = "POST"
-            let parameters: [String: Any] = ["Email": username, "Password": password]
-            let jsonData = try? JSONSerialization.data(withJSONObject: parameters)
-            request.httpBody = jsonData
-            let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
-                guard let data = data, let response = response as? HTTPURLResponse, error == nil else {
-                    completion(.failure(.networkError))
-                    return
-                }
-                self?.loginCompleted(data: data, response: response, completion: completion)
-            }
-            task.resume()
-        }
+        guard let loginOperation = LoginOperation(username: username, password: password, completion: completion) else { return }
+        operationQueue.addOperation(loginOperation)
     }
     
-    func loginCompleted(data: Data, response: HTTPURLResponse, completion: @escaping (LoginResult) -> ()) {
-        DispatchQueue.main.async {
-            if let httpError = self.httpError(from: response) {
-                completion(.failure(httpError))
-            } else {
-                let decoder = JSONDecoder()
-                do {
-                    let decodedResponse = try decoder.decode(LoginResponse.self, from: data)
-                    completion(.success(decodedResponse))
-                } catch {
-                    print("Failed to decode JSON")
-                    completion(.failure(.applicationError))
-                }
-            }
+    func getAccounts(bearerToken: String?, completion: @escaping (AccountsResult) -> ()) {
+        guard let bearerToken = bearerToken ?? self.getSession()?.bearerToken else {
+            completion(.failure(.unauthorized))
+            return
         }
+        guard let getAccountsOperation = GetAccountsOperation(bearerToken: bearerToken, completion: completion) else { return }
+        operationQueue.addOperation(getAccountsOperation)
     }
     
-    func getAccounts(completion: @escaping (AccountsResult) -> ()) {
-        operationQueue.addOperation { [weak self] in
-            guard let url = URL(string: Environment.baseURL + "/investorproducts") else { return }
-            var request = MoneyboxURLRequestBuilder.urlRequest(url: url)
-            if let token = self?.getSession()?.bearerToken {
-                request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-            }
-            let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
-                guard let data = data, let response = response as? HTTPURLResponse, error == nil else {
-                    completion(.failure(.networkError))
-                    return
-                }
-                self?.getAccountsCompleted(data: data, response: response, completion: completion)
-            }
-            task.resume()
+    func makeOneOffPayment(bearerToken: String?, account: Account, amount: Int, completion: @escaping (PaymentResult) -> ()) {
+        guard let bearerToken = bearerToken ?? self.getSession()?.bearerToken else {
+            completion(.failure(.unauthorized))
+            return
         }
+        guard let makeOneOffPaymentOperation = MakeOneOffPaymentOperation(account: account, amount: amount, bearerToken: bearerToken, completion: completion) else { return }
+        operationQueue.addOperation(makeOneOffPaymentOperation)
     }
-    
-    func getAccountsCompleted(data: Data, response: HTTPURLResponse, completion: @escaping (AccountsResult) -> ()) {
-        DispatchQueue.main.async {
-            if let httpError = self.httpError(from: response) {
-                completion(.failure(httpError))
-            } else {
-                let decoder = JSONDecoder()
-                do {
-                    let decodedResponse = try decoder.decode(AccountsResponse.self, from: data)
-                    completion(.success(decodedResponse))
-                } catch {
-                    completion(.failure(.jsonError))
-                }
-            }
-        }
-    }
-    
-    func makeOneOffPayment(account: Account, amount: Int, completion: @escaping (PaymentResult) -> ()) {
-        operationQueue.addOperation { [weak self] in
-            guard let url = URL(string: Environment.baseURL + "/oneoffpayments") else { return }
-            var request = MoneyboxURLRequestBuilder.urlRequest(url: url)
-            request.httpMethod = "POST"
-            let parameters: [String: Any] = ["Amount": amount, "InvestorProductId": account.productId]
-            let jsonData = try? JSONSerialization.data(withJSONObject: parameters)
-            request.httpBody = jsonData
-            if let token = self?.getSession()?.bearerToken {
-                request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-            }
-            let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
-                guard let data = data, let response = response as? HTTPURLResponse, error == nil else {
-                    completion(.failure(.networkError))
-                    return
-                }
-                self?.oneOffPaymentCompleted(data: data, response: response, completion: completion)
-            }
-            task.resume()
-        }
-    }
-    
-    func oneOffPaymentCompleted(data: Data, response: HTTPURLResponse, completion: @escaping (PaymentResult) -> ()) {
-        DispatchQueue.main.async {
-            if let httpError = self.httpError(from: response) {
-                completion(.failure(httpError))
-            } else {
-                let decoder = JSONDecoder()
-                do {
-                    let decodedResponse = try decoder.decode(PaymentResponse.self, from: data)
-                    completion(.success(decodedResponse))
-                } catch {
-                    completion(.failure(.jsonError))
-                }
-            }
-        }
-    }
-    
-    // MARK: Helpers...
-    
-    private func httpError(from response: HTTPURLResponse) -> DataServiceError? {
-        if (200 ... 299) ~= response.statusCode {
-            return nil
-        } else {
-            switch response.statusCode {
-            case 401:
-                return .unauthorized
-            case 500:
-                return .serverError
-            default:
-                return .applicationError
-            }
-        }
-    }
-    
 }

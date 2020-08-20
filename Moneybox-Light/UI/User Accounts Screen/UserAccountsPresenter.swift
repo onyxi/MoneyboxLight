@@ -10,7 +10,7 @@ import Foundation
 
 class UserAccountsPresenter {
     
-    let dao: DataAccessObject
+    private let dao: DataAccessObject
     
     weak var view: UserAccountsViewContract?
     
@@ -18,18 +18,18 @@ class UserAccountsPresenter {
         self.dao = dao
     }
     
-    func updateGreeting() {
+    fileprivate func updateGreeting() {
         if let name = dao.getUser()?.name {
-            view?.setGreeting(localisableString(forKey: "user_accounts_screen_greeting_prefix") + name)
+            view?.setGreeting(localisableString(forKey: "user_accounts_screen_greeting_prefix") + name + "!")
         }
     }
     
-    func fetchAccounts() {
+    fileprivate func fetchAccounts() {
         view?.showLoading(true)
         dao.getAccounts(completion: fetchAccountsCompleted)
     }
     
-    fileprivate func fetchAccountsCompleted(_ result: AccountsResult) {
+    func fetchAccountsCompleted(_ result: AccountsResult) {
         guard let view = view else { return }
         view.showLoading(false)
         switch result {
@@ -59,11 +59,11 @@ class UserAccountsPresenter {
     
     private func dataServiceAlertConfiguration() -> AlertConfiguration {
         return AlertConfiguration(
-            title: "Oops!",
-            message: "Something went wrong",
+            title: localisableString(forKey: "alert_generic_error_title"),
+            message: localisableString(forKey: "alert_generic_error_message"),
             actions: [
-                AlertConfiguration.Action(title: "Cancel", type: .cancel, completion: nil),
-                AlertConfiguration.Action(title: "Retry", type: .normal, completion: { [weak self] in
+                AlertConfiguration.Action(title: localisableString(forKey: "alert_cancel_button"), type: .cancel, completion: nil),
+                AlertConfiguration.Action(title: localisableString(forKey: "alert_retry_button"), type: .normal, completion: { [weak self] in
                     self?.fetchAccounts()
                 })
         ])

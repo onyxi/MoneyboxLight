@@ -10,7 +10,7 @@ import Foundation
 
 class LoginPresenter {
     
-    let dao: DataAccessObject
+    private let dao: DataAccessObject
 
     weak var view: LoginViewContract?
     
@@ -24,7 +24,7 @@ class LoginPresenter {
         dao.login(username: view.getEmail(), password: view.getPassword(), completion: loginCompleted)
     }
     
-    fileprivate func loginCompleted(_ result: LoginResult) {
+    func loginCompleted(_ result: LoginResult) {
         view?.showLoading(false)
         switch result {
         case .success(let loginResponse):
@@ -38,11 +38,11 @@ class LoginPresenter {
     
     private func loginFailureAlertConfiguration() -> AlertConfiguration {
         return AlertConfiguration(
-            title: "Oops!",
-            message: "Something went wrong",
+            title: localisableString(forKey: "alert_generic_error_title"),
+            message: localisableString(forKey: "alert_generic_error_message"),
             actions: [
-                AlertConfiguration.Action(title: "Cancel", type: .cancel, completion: nil),
-                AlertConfiguration.Action(title: "Retry", type: .normal, completion: { [weak self] in
+                AlertConfiguration.Action(title: localisableString(forKey: "alert_cancel_button"), type: .cancel, completion: nil),
+                AlertConfiguration.Action(title: localisableString(forKey: "alert_retry_button"), type: .normal, completion: { [weak self] in
                     self?.login()
                 })
         ])

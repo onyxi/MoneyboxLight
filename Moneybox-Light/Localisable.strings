@@ -11,7 +11,6 @@
 "login_screen_password_placeholder" = "Password";
 "login_screen_button_title" = "Login";
 
-
 // User accounts screen
 "user_accounts_screen_greeting_prefix" = "Hello ";
 "user_accounts_screen_accounts_total_title" = "Your total plan value is";
@@ -28,3 +27,9 @@
 "individual_account_screen_plan_moneybox_title" = "Moneybox";
 "individual_account_screen_plan_moneybox_prefix" = "£";
 "individual_account_screen_payment_button_title_prefix" = "Add £";
+
+// Alerts
+"alert_generic_error_title" = "Oops!";
+"alert_generic_error_message" = "Something went wrong";
+"alert_cancel_button" = "Cancel";
+"alert_retry_button" = "Retry";

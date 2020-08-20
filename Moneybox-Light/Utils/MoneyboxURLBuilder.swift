@@ -11,10 +11,10 @@ import Foundation
 class MoneyboxURLRequestBuilder {
     static func urlRequest(url: URL) -> URLRequest {
          var request = URLRequest(url: url)
-        request.setValue(Environment.appId, forHTTPHeaderField: "AppId")
-        request.setValue(Environment.contentType, forHTTPHeaderField: "Content-Type")
-        request.setValue(Environment.appVersion, forHTTPHeaderField: "appVersion")
-        request.setValue(Environment.apiVersion, forHTTPHeaderField: "apiVersion")
+        request.setValue(Environment.appId, forHTTPHeaderField: HttpHeader.appId)
+        request.setValue(Environment.contentType, forHTTPHeaderField: HttpHeader.contentType)
+        request.setValue(Environment.appVersion, forHTTPHeaderField: HttpHeader.appVersion)
+        request.setValue(Environment.apiVersion, forHTTPHeaderField: HttpHeader.apiVersion)
         return request
     }
 }

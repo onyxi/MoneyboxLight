@@ -8,10 +8,14 @@
 
 import Foundation
 
-struct User: Codable {
+struct User: Codable, Equatable {
     let name: String
     
     enum CodingKeys: String, CodingKey {
         case name = "FirstName"
+    }
+    
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.name == rhs.name
     }
 }

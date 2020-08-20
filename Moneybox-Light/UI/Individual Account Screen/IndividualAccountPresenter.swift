@@ -10,12 +10,12 @@ import Foundation
 
 class IndividualAccountPresenter {
     
-    let account: Account
-    let dao: DataAccessObject
+    private let account: Account
+    private let dao: DataAccessObject
     
     weak var view: IndividualAccountViewContract?
     
-    var currentMoneyboxValue: Double
+    private(set) var currentMoneyboxValue: Double
     let oneOffPaymentAmount = 10
     
     init(account: Account, dao: DataAccessObject) {
@@ -36,7 +36,7 @@ class IndividualAccountPresenter {
         dao.makeOneOffPayment(account: account, amount: oneOffPaymentAmount, completion: oneOffPaymentCompleted)
     }
     
-    fileprivate func oneOffPaymentCompleted(_ result: PaymentResult) {
+    func oneOffPaymentCompleted(_ result: PaymentResult) {
         view?.showLoading(false)
         switch result {
         case .success(let paymentResponse):
@@ -53,11 +53,11 @@ class IndividualAccountPresenter {
     
     private func dataServiceAlertConfiguration() -> AlertConfiguration {
         return AlertConfiguration(
-            title: "Oops!",
-            message: "Something went wrong",
+            title: localisableString(forKey: "alert_generic_error_title"),
+            message: localisableString(forKey: "alert_generic_error_message"),
             actions: [
-                AlertConfiguration.Action(title: "Cancel", type: .cancel, completion: nil),
-                AlertConfiguration.Action(title: "Retry", type: .normal, completion: { [weak self] in
+                AlertConfiguration.Action(title: localisableString(forKey: "alert_cancel_button"), type: .cancel, completion: nil),
+                AlertConfiguration.Action(title: localisableString(forKey: "alert_retry_button"), type: .normal, completion: { [weak self] in
                     self?.makeOneOffPayment()
                 })
         ])

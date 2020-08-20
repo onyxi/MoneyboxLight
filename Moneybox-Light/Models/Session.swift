@@ -8,10 +8,14 @@
 
 import Foundation
 
-struct Session: Codable {
+struct Session: Codable, Equatable {
     let bearerToken: String
     
     enum CodingKeys: String, CodingKey {
         case bearerToken = "BearerToken"
+    }
+    
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.bearerToken == rhs.bearerToken
     }
 }
