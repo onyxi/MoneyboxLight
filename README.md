@@ -11,6 +11,8 @@ To try out the app, use the following credentials to log in:
  - Password `P455word12`
 
 ## Usage
+To view the code and test the project, open the `Moneybox-Light.xcworkspace` in Xcode.
+
 To view a summary of all accounts, simply login with the credentials above and you will be presented with a greeting, the user's total plan value, and a list of the user's individual accounts. Tap on an account in the list to view that account's details.
 
 When viewing an account's details, as well as the account's name, current value and current Moneybox amount, the 'Add £10' button can be tapped to add that amount to the user's Moneybox ready for investment.
