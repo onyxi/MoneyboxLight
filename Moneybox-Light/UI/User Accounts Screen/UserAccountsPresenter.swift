@@ -87,7 +87,7 @@ extension UserAccountsPresenter: UserAccountsPresenterContract {
     
     /**
      called when the screen's View object is ready to be used
-    - Parameter view: sreen's associated View object
+    - Parameter view: screen's associated View object
     */
     func viewReady(_ view: UserAccountsViewContract) {
         self.view = view

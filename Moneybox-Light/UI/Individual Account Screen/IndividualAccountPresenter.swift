@@ -31,11 +31,16 @@ class IndividualAccountPresenter {
         view?.setPaymentButtonTitle(localisableString(forKey: "individual_account_screen_payment_button_title_prefix") + String(oneOffPaymentAmount))
     }
     
+    /// Attempts to make a one-off payment to the moneybox for the viewed account
     fileprivate func makeOneOffPayment() {
         view?.showLoading(true)
         dao.makeOneOffPayment(account: account, amount: oneOffPaymentAmount, completion: oneOffPaymentCompleted)
     }
     
+    /**
+     Handles completion of a one-off-payment attempt
+    - Parameter result: the result of the one-off-payment attempt
+    */
     func oneOffPaymentCompleted(_ result: PaymentResult) {
         view?.showLoading(false)
         switch result {
@@ -72,15 +77,21 @@ class IndividualAccountPresenter {
 // MARK: IndividualAccountPresenterContract
 extension IndividualAccountPresenter: IndividualAccountPresenterContract {
     
+    /**
+     called when the screen's View object is ready to be used
+    - Parameter view: screen's associated View object
+    */
     func viewReady(_ view: IndividualAccountViewContract) {
         self.view = view
         updateView()
     }
     
+    /// Notifes the screen's View object to navigate to the previous sreen when the 'back' button is tapped
     func backTapped() {
         view?.returnToPreviousScreen()
     }
     
+    /// Attempts to make a one-off payment to the moneybox for the viewed account when the payment buttojn is tapped
     func paymentButtonTapped() {
         makeOneOffPayment()
     }

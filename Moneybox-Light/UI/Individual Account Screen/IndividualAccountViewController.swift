@@ -38,10 +38,12 @@ class IndividualAccountViewController: BaseViewController {
         presenter.viewReady(self)
     }
     
+    /// Notifies the Presenter object when the back button is tapped
     @IBAction func backTapped(_ sender: Any) {
         presenter.backTapped()
     }
     
+    /// Notifies the Presenter object when the payment button is tapped
     @IBAction func paymentButtonTapped(_ sender: Any) {
         presenter.paymentButtonTapped()
     }
@@ -76,34 +78,60 @@ extension IndividualAccountViewController: IndividualAccountViewContract {
         super.showLoadingOverlay(shouldShowLoading)
     }
     
+    /**
+     Sets the text of the screen title label
+     - Parameter text: the text to be displayed
+    */
     func setScreenTitle(_ text: String) {
         screenTitleLabel.text = text
     }
     
+    /**
+     Sets the text of the plan value title label
+     - Parameter text: the text to be displayed
+    */
     func setPlanValueTitle(_ text: String) {
         planTitleLabel.text = text
     }
     
+    /**
+     Sets the text of the plan value label
+     - Parameter text: the text to be displayed
+    */
     func setPlanValue(_ text: String) {
         planValueLabel.text = text
     }
     
+    /**
+     Sets the text of the Moneybox value label
+     - Parameter text: the text to be displayed
+    */
     func setMoneyboxValue(_ text: String) {
         moneyboxValueLabel.text = text
     }
     
+    /**
+     Sets the title text of the payment button
+     - Parameter text: the text to be displayed
+    */
     func setPaymentButtonTitle(_ text: String) {
         paymentButton.setTitle(text, for: .normal)
     }
     
+    /// Navigates the user back to the preivous screen
     func returnToPreviousScreen() {
         navigationController?.popViewController(animated: true)
     }
     
+    /// Shows the login screen
     func showLoginScreen() {
         super.showLogin()
     }
     
+    /**
+     Displays an alert with the given configuration
+    - Parameter configuration: the configuration used to build the alert
+    */
     func showAlert(_ configuration: AlertConfiguration) {
         let alert = AlertController.alert(with: configuration)
         present(alert, animated: true)

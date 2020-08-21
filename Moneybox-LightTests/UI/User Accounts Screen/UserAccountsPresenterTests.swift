@@ -50,7 +50,7 @@ class UserAccountsPresenterTests: XCTestCase {
         let mockAccountsResponse = AccountsResponse(totalPlanValue: 3000.0, productResponses: [mockProductResponse1, mockProductResponse2])
         userAccountsPresenter.fetchAccountsCompleted(.success(mockAccountsResponse))
         XCTAssertEqual(mockUserAccountsView.setTotalTitle_calls, 1)
-        XCTAssertEqual(mockUserAccountsView.setTotalTitle_text, "Current Plan Value")
+        XCTAssertEqual(mockUserAccountsView.setTotalTitle_text, "Your total plan value is")
         XCTAssertEqual(mockUserAccountsView.setTotal_calls, 1)
         XCTAssertEqual(mockUserAccountsView.setTotal_text, "£3000.00")
         XCTAssertEqual(mockUserAccountsView.setAccounts_calls, 1)
