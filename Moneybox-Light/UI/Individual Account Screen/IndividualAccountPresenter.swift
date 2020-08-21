@@ -51,6 +51,10 @@ class IndividualAccountPresenter {
         }
     }
     
+    /**
+     Provides an alert configuration for generic error state
+    - Returns: alert configuration for generic error state
+    */
     private func dataServiceAlertConfiguration() -> AlertConfiguration {
         return AlertConfiguration(
             title: localisableString(forKey: "alert_generic_error_title"),

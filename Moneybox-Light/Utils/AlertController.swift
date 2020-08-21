@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// AlertController acts as a wrapper for UIAlertAcontroller, making it simpler to ceate alerts with a given AlertConfiguration
 class AlertController: UIAlertController {
     
     static func alert(with configuration: AlertConfiguration) -> AlertController {
@@ -37,12 +38,18 @@ class AlertController: UIAlertController {
 
 // MARK: AlertConfiguration
 
+/// AlertConfiguration provides an easily testable object that is ignorant of UIKit so can be configured in business-logic layers
 struct AlertConfiguration {
     
     let title: String
     let message: String?
     let actions: [Action]?
     
+    /**
+    - Parameter title: the title for the alert
+    - Parameter message: the message for the alert
+    - Parameter actions: an array of Action objects used to construct the alert's buttons
+    */
     init(title: String, message: String?, actions: [Action]?) {
         self.title = title
         self.message = message
@@ -51,6 +58,12 @@ struct AlertConfiguration {
     
     enum ActionType { case normal, cancel, destructive}
     
+    /**
+     AlertConfiguration.Action captures the data required to construct ation buttons for an alert
+    - Parameter title: the title for the button
+    - Parameter type: the style of the button
+    - Parameter completion: the function to be executed when the button is tapped
+    */
     struct Action {
         let title: String
         let type: ActionType

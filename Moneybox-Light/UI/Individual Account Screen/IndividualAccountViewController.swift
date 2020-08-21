@@ -68,6 +68,10 @@ class IndividualAccountViewController: BaseViewController {
 // MARK: IndividualAccountViewContract
 extension IndividualAccountViewController: IndividualAccountViewContract {
     
+    /**
+     Displays (or hides) a full screen loading overlay view with activity indicator
+    - Parameter shouldShowLoading: flag to indicate if the loading view should be shown or hidden
+    */
     func showLoading(_ shouldShowLoading: Bool) {
         super.showLoadingOverlay(shouldShowLoading)
     }

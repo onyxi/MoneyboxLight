@@ -7,12 +7,18 @@
 //
 
 import Foundation
-
+/// MakeOneOffPaymentOperation performs an asynchronous network call to attempt addition of funds to the users moneybox for a given account
 final class MakeOneOffPaymentOperation: Operation {
     
     let urlRequest: URLRequest
     private let completion: (PaymentResult) -> ()
     
+    /**
+     - Parameter account: The account assoiciated with the Moneybox the user would like to add funds to
+     - Parameter amount: The amount of funds to add
+     - Parameter bearerToken: The auth token required to access the endpoint
+     - Parameter completion: The function to be executed when the operation completes
+     */
     init?(account: Account, amount: Int, bearerToken: String, completion: @escaping (PaymentResult) -> ()) {
         guard let url = URL(string: Environment.baseURL + "/oneoffpayments") else { return nil }
         var urlRequest = MoneyboxURLRequestBuilder.urlRequest(url: url)

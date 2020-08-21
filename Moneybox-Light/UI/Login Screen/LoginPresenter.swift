@@ -18,12 +18,17 @@ class LoginPresenter {
         self.dao = dao
     }
     
+    /// Attempts login with the server
     fileprivate func login() {
         guard let view = view else { return }
         view.showLoading(true)
         dao.login(username: view.getEmail(), password: view.getPassword(), completion: loginCompleted)
     }
     
+    /**
+     Handles completion of a login attempt
+    - Parameter result: the result of the login attempt
+    */
     func loginCompleted(_ result: LoginResult) {
         view?.showLoading(false)
         switch result {
@@ -36,6 +41,10 @@ class LoginPresenter {
         }
     }
     
+    /**
+     Provides an alert configuration for generic error state
+    - Returns: alert configuration for generic error state
+    */
     private func loginFailureAlertConfiguration() -> AlertConfiguration {
         return AlertConfiguration(
             title: localisableString(forKey: "alert_generic_error_title"),
@@ -53,10 +62,15 @@ class LoginPresenter {
 // MARK: LoginPresenterContract
 extension LoginPresenter: LoginPresenterContract {
     
+    /**
+     called when the screen's View object is ready to be used
+    - Parameter view: sreen's associated View object
+    */
     func viewReady(_ view: LoginViewContract) {
         self.view = view
     }
-    
+
+    /// Handles taps of the login button in the View object
     func loginTapped() {
         login()
     }

@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// LoginButton is a custom UIButton with rounded corners and a localisable title
 class LoginButton: UIButton {
 
     override func awakeFromNib() {

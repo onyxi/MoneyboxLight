@@ -8,12 +8,14 @@
 
 import Foundation
 
+/// IndividualAccountPresenterContract is an interface for the Presenter object of the Individual Account screen
 protocol IndividualAccountPresenterContract: class {
     func viewReady(_ view: IndividualAccountViewContract)
     func backTapped()
     func paymentButtonTapped()
 }
 
+/// IndividualAccountViewContract is an interface for the Presenter object of the Individual Account screen
 protocol IndividualAccountViewContract: class {
     func showLoading(_ shouldShowLoading: Bool)
     func setScreenTitle(_ text: String)

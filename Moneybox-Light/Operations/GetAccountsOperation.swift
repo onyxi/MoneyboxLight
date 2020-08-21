@@ -8,11 +8,16 @@
 
 import Foundation
 
+/// GetAccountsOperation performs an asynchronous network call to attempt retrieval of the user's accounts info
 final class GetAccountsOperation: Operation {
     
     let urlRequest: URLRequest
     private let completion: (AccountsResult) -> ()
     
+    /**
+    - Parameter bearerToken: The auth token required to access the endpoint
+    - Parameter completion: The function to be executed when the operation completes
+    */
     init?(bearerToken: String, completion: @escaping (AccountsResult) -> ()) {
         guard let url = URL(string: Environment.baseURL + "/investorproducts") else { return nil }
         var urlRequest = MoneyboxURLRequestBuilder.urlRequest(url: url)

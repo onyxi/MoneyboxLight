@@ -8,7 +8,9 @@
 
 import UIKit
 
+/// CustomNavigationController provides a UINavigationController with the navigation bar hidden
 class CustomNavigationController: UINavigationController {
+    
     init() {
         super.init(nibName: nil, bundle: nil)
         setNavigationBarHidden(true, animated: false)

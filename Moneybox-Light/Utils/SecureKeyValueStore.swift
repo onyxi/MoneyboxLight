@@ -9,6 +9,7 @@
 import Foundation
 import KeychainSwift
 
+/// SecureKeyValueStoreProtocol is the interface for an object which provides access to data stored securely in a key-value format
 protocol SecureKeyValueStoreProtocol {
     func get(_ key: String) -> String?
     func set(_ value: String, forKey key: String, withAccess access: KeychainSwiftAccessOptions?) -> Bool

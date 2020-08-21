@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// KeyValueStoreProtocol is the interface for an object which provides access to data stored in a key-value format
 protocol KeyValueStoreProtocol {
     func set(_ value: Any?, forKey: String)
     func string(forKey defaultName: String) -> String?

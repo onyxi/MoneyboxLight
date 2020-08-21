@@ -8,12 +8,14 @@
 
 import Foundation
 
+/// UserAccountsPresenterContract is an interface for the Presenter object of the User Accounts screen
 protocol UserAccountsPresenterContract: class {
     func viewReady(_ view: UserAccountsViewContract)
     func viewAppeared()
     func accountTapped(_ account: Account)
 }
 
+/// UserAccountsViewContract is an interface for the View object of the User Accounts screen
 protocol UserAccountsViewContract: class {
     func showLoading(_ shouldShowLoading: Bool)
     func setGreeting(_ text: String)

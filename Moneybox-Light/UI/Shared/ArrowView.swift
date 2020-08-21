@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// ArrowView provides a UIView with right-faicng chevron arrow drawn
 class ArrowView: UIView {
     
     var path: UIBezierPath?

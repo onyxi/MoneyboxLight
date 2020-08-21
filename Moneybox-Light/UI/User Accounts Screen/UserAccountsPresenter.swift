@@ -18,17 +18,23 @@ class UserAccountsPresenter {
         self.dao = dao
     }
     
+    /// Updates the greeting in the View's summary section
     fileprivate func updateGreeting() {
         if let name = dao.getUser()?.name {
             view?.setGreeting(localisableString(forKey: "user_accounts_screen_greeting_prefix") + name + "!")
         }
     }
     
+    /// Attempts to fetch the user's account info from the server
     fileprivate func fetchAccounts() {
         view?.showLoading(true)
         dao.getAccounts(completion: fetchAccountsCompleted)
     }
     
+    /**
+     Handles completion of a accounts-fetch attempt
+    - Parameter result: the result of the accounts-fetch attempt
+    */
     func fetchAccountsCompleted(_ result: AccountsResult) {
         guard let view = view else { return }
         view.showLoading(false)
@@ -57,6 +63,10 @@ class UserAccountsPresenter {
         }
     }
     
+    /**
+     Provides an alert configuration for generic error state
+    - Returns: alert configuration for generic error state
+    */
     private func dataServiceAlertConfiguration() -> AlertConfiguration {
         return AlertConfiguration(
             title: localisableString(forKey: "alert_generic_error_title"),
@@ -75,16 +85,25 @@ class UserAccountsPresenter {
 // MARK: UserAccountsPresenterContract
 extension UserAccountsPresenter: UserAccountsPresenterContract {
     
+    /**
+     called when the screen's View object is ready to be used
+    - Parameter view: sreen's associated View object
+    */
     func viewReady(_ view: UserAccountsViewContract) {
         self.view = view
         updateGreeting()
     }
     
+    /// Attempts to update the View's greeting message and fetch account details each time the View appears on screen
     func viewAppeared() {
         updateGreeting()
         fetchAccounts()
     }
     
+    /**
+     Notifies the view to go to the individual account screen for a given account when tapped
+    - Parameter account: the account that was tapped
+    */
     func accountTapped(_ account: Account) {
         view?.goToAccountDetailsScreen(account)
     }

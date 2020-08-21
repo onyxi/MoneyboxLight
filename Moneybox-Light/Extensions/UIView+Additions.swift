@@ -10,6 +10,7 @@ import UIKit
 
 extension UIView {
     
+    /// Loads a file from a .xib
     static func loadFromNib(_ nibNameOrNil: String? = nil, bundle: Bundle? = nil) -> Self {
         let nibName = nibNameOrNil ?? self.className
         let nib = UINib(nibName: nibName, bundle: bundle)
@@ -22,7 +23,10 @@ extension UIView {
         return components.last!
     }
     
-    /// Pins a given view to another view - constrained to the leading, trailing, top and bottom anchors
+    /**
+     Pins a given view to another view - constrained to the leading, trailing, top and bottom anchors
+    - Parameter subview: the UIView to add as a subview and constrain to this parent UIView
+    */
     func addConstrained(subview: UIView) {
         addSubview(subview)
         subview.translatesAutoresizingMaskIntoConstraints = false

@@ -10,6 +10,9 @@ import Foundation
 
 extension Int {
     
+    /**
+     Returns an optional DataServiceError associated with http error codes for this Int
+    */
     func asHttpError() -> DataServiceError? {
         if (200 ... 299) ~= self {
             return nil

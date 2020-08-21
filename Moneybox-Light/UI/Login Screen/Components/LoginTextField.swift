@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// LoginTextField is a custom UITextField with rounded corners
 class LoginTextField: UITextField {
 
     override func awakeFromNib() {

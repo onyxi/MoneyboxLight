@@ -22,6 +22,10 @@ class BaseViewController: UIViewController {
         hideKeyboardWhenTappedAround()
     }
     
+    /**
+     Displays (or hides) a full screen loading overlay view with activity indicator
+    - Parameter shouldShowLoading: flag to indicate if the loading view should be shown or hidden
+    */
     func showLoadingOverlay(_ shouldShowLoading: Bool) {
         if shouldShowLoading {
             activityIndicator.startAnimating()
@@ -33,18 +37,21 @@ class BaseViewController: UIViewController {
         isShowingLoading = shouldShowLoading
     }
     
+    /// Shows the login screen
     func showLogin() {
         let loginPresenter = LoginPresenter(dao: DataAccessObjectImpl())
         let loginViewController = LoginViewController(presenter: loginPresenter)
         navigationController?.present(loginViewController, animated: true, completion: nil)
     }
     
+    /// Dismisses the soft keyboard if anywhere on the screen (other than the keyboard) is tapped
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
 
+    /// Dismisses the soft keyboard if shown
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }

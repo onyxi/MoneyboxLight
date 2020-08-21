@@ -16,6 +16,9 @@ class LoginViewController: BaseViewController {
 
     private let presenter: LoginPresenterContract
     
+    /**
+    - Parameter presenter: the associated Presenter for the login screen
+    */
     init(presenter: LoginPresenterContract) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
@@ -34,6 +37,7 @@ class LoginViewController: BaseViewController {
         presenter.viewReady(self)
     }
     
+    /// Notifies the Presenter object when the login button is tapped
     @IBAction func loginTapped(_ sender: Any) {
         presenter.loginTapped()
     }
@@ -43,22 +47,38 @@ class LoginViewController: BaseViewController {
 // MARK: LoginViewContract
 extension LoginViewController: LoginViewContract {
     
+    /**
+     Displays (or hides) a full screen loading overlay view with activity indicator
+    - Parameter shouldShowLoading: flag to indicate if the loading view should be shown or hidden
+    */
     func showLoading(_ shouldShowLoading: Bool) {
         super.showLoadingOverlay(shouldShowLoading)
     }
     
+    /**
+     Gets the current text entered in the Email text field
+    - Returns: the text of the Email text field
+    */
     func getEmail() -> String {
         return emailTextField.text ?? ""
     }
-    
+    /**
+     Gets the current text entered in the Password text field
+    - Returns: the text of the Password text field
+    */
     func getPassword() -> String {
         return passwordTextField.text ?? ""
     }
     
+    /// Dismiss the login screen
     func dismissScreen() {
         dismiss(animated: true, completion: nil)
     }
     
+    /**
+     Displays an alert with the given configuration
+    - Parameter configuration: the configuration used to build the alert
+    */
     func showAlert(_ configuration: AlertConfiguration) {
         let alert = AlertController.alert(with: configuration)
         present(alert, animated: true)

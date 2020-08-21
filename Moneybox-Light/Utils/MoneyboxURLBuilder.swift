@@ -8,7 +8,14 @@
 
 import Foundation
 
+/// MoneyboxURLRequestBuilder enables simple construction of URLRequest objects with base header fields added
 class MoneyboxURLRequestBuilder {
+    
+    /**
+      Creates a URLRequest with base headers added
+     - Parameter url: a URL object to add base header fields to
+     - Returns: a URLRequest with base header fields added
+     */
     static func urlRequest(url: URL) -> URLRequest {
          var request = URLRequest(url: url)
         request.setValue(Environment.appId, forHTTPHeaderField: HttpHeader.appId)

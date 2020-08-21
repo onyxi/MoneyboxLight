@@ -8,11 +8,13 @@
 
 import Foundation
 
+/// LoginPresenterContract is an interface for the Presenter object of the Login screen
 protocol LoginPresenterContract: class {
     func viewReady(_ view: LoginViewContract)
     func loginTapped()
 }
 
+/// LoginViewContract is an interface for the View object of the Login screen
 protocol LoginViewContract: class {
     func showLoading(_ shouldShowLoading: Bool)
     func getEmail() -> String

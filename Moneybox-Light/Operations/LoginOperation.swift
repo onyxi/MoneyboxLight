@@ -8,11 +8,17 @@
 
 import Foundation
 
+/// LoginOperation performs an asynchronous network call to attempt login with the server with a given username and password
 final class LoginOperation: Operation {
     
     let urlRequest: URLRequest
     private let completion: (LoginResult) -> ()
     
+    /**
+    - Parameter username: The email username of the account to attempt login for
+    - Parameter password: the password of the account to attempt login for
+    - Parameter completion: The function to be executed when the operation completes
+    */
     init?(username: String, password: String, completion: @escaping (LoginResult) -> ()) {
         guard let url = URL(string: Environment.baseURL + "/users/login") else { return nil }
         var urlRequest = MoneyboxURLRequestBuilder.urlRequest(url: url)
